@@ -16,7 +16,7 @@ export default function DeatilValue() {
                 <DetailComponent icon={temp} title='온도' value='25도' />
                 <DetailComponent icon={humidity} title='습도' value='45%' />
             </View><View style={styles.detailRowWrap}>
-                <DetailComponent icon={bright} title='밝기' value='1500Lx' />
+                <DetailComponent icon={bright} title='밝기' value='1500' />
                 <DetailComponent icon={dist} title='거리' value='50cm' />
                 <DetailComponent icon={sound} title='소리' value='50db' />
             </View>

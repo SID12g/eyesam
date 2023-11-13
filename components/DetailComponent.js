@@ -1,13 +1,15 @@
 import { View, Image, Text, StyleSheet } from "react-native"
 import { windowWidth, windowHeight } from "../utils/ScreenSize"
 import blink from '../assets/images/blink_icon.png'
-import bright from '../assets/images/bright_icon.png'
-import dist from '../assets/images/dist_icon.png'
-import humidity from '../assets/images/humidity_icon.png'
-import sound from '../assets/images/sound_icon.png'
-import temp from '../assets/images/temp_icon.png'
+import { useFonts } from "expo-font"
 
 export default function DetailComponent({icon, title, value}) {
+    let [fontsLoaded, fontError] = useFonts({
+        'NEXON-LV2-Gothic-Bold':require('../assets/fonts/NEXON-Lv2-Gothic-Bold.ttf')
+    })
+    if(!fontsLoaded) {
+        return null
+    }
     return (
         <View style={styles.detailComponent}>
             <View style={styles.detailTitle}>
@@ -45,6 +47,7 @@ const styles = StyleSheet.create({
         textAlign:'right',
         width:windowWidth*50,
         paddingRight:windowWidth*5,
+        fontFamily:'NEXON-LV2-Gothic-Bold'
     },
     detailTextBlink: {
         color: 'white',
@@ -53,6 +56,7 @@ const styles = StyleSheet.create({
         textAlign:'right',
         width:windowWidth*50,
         paddingRight:windowWidth*3,
+        fontFamily:'NEXON-LV2-Gothic-Bold'
     },
     detailValue: {
         fontSize: 24,
@@ -60,5 +64,6 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         marginRight: windowWidth * 11,
         marginTop: windowHeight * 10,
+        fontFamily:'NEXON-LV2-Gothic-Bold'
     },
 })

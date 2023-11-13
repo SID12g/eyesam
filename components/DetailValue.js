@@ -1,96 +1,36 @@
 import { View, Text, Image, StyleSheet } from "react-native"
 import { windowWidth, windowHeight } from "../utils/ScreenSize"
 import blink from '../assets/images/blink_icon.png'
+import bright from '../assets/images/bright_icon.png'
+import dist from '../assets/images/dist_icon.png'
+import humidity from '../assets/images/humidity_icon.png'
+import sound from '../assets/images/sound_icon.png'
+import temp from '../assets/images/temp_icon.png'
+
+import DetailComponent from "./DetailComponent"
 export default function DeatilValue() {
     return (
         <View style={styles.detailColumnWrap}>
             <View style={styles.detailRowWrap}>
-                <View style={styles.detailComponent}>
-                    <View style={styles.detailTitle}>
-                        <Image source={blink} style={styles.detailIcon} />
-                        <Text style={styles.detailText}>눈 깜빡임</Text>
-                    </View>
-                    <Text style={styles.detailValue}>20회</Text>
-                </View>
-                <View style={styles.detailComponent}>
-                    <View style={styles.detailTitle}>
-                        <Image source={blink} style={styles.detailIcon} />
-                        <Text style={styles.detailText}>눈 깜빡임</Text>
-                    </View>
-                    <Text style={styles.detailValue}>20회</Text>
-                </View>
-                <View style={styles.detailComponent}>
-                    <View style={styles.detailTitle}>
-                        <Image source={blink} style={styles.detailIcon} />
-                        <Text style={styles.detailText}>눈 깜빡임</Text>
-                    </View>
-                    <Text style={styles.detailValue}>20회</Text>
-                </View>
+                <DetailComponent icon={blink} title='눈 깜빡임' value='20회' />
+                <DetailComponent icon={temp} title='온도' value='25도' />
+                <DetailComponent icon={humidity} title='습도' value='45%' />
             </View><View style={styles.detailRowWrap}>
-                <View style={styles.detailComponent}>
-                    <View style={styles.detailTitle}>
-                        <Image source={blink} style={styles.detailIcon} />
-                        <Text style={styles.detailText}>눈 깜빡임</Text>
-                    </View>
-                    <Text style={styles.detailValue}>20회</Text>
-                </View>
-                <View style={styles.detailComponent}>
-                    <View style={styles.detailTitle}>
-                        <Image source={blink} style={styles.detailIcon} />
-                        <Text style={styles.detailText}>눈 깜빡임</Text>
-                    </View>
-                    <Text style={styles.detailValue}>20회</Text>
-                </View>
-                <View style={styles.detailComponent}>
-                    <View style={styles.detailTitle}>
-                        <Image source={blink} style={styles.detailIcon} />
-                        <Text style={styles.detailText}>눈 깜빡임</Text>
-                    </View>
-                    <Text style={styles.detailValue}>20회</Text>
-                </View>
+                <DetailComponent icon={bright} title='밝기' value='1500Lx' />
+                <DetailComponent icon={dist} title='거리' value='50cm' />
+                <DetailComponent icon={sound} title='소리' value='50db' />
             </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    detailColumnWrap:{
+    detailColumnWrap: {
 
     },
     detailRowWrap: {
         flexDirection: 'row',
         justifyContent: 'center',
         marginTop: windowHeight * 23,
-    },
-    detailComponent: {
-        width: windowWidth * 100,
-        height: windowHeight * 100,
-        backgroundColor: '#353535',
-        borderRadius: 15,
-        marginHorizontal: windowWidth * 10,
-    },
-    detailTitle: {
-        flexDirection: 'row',
-        marginLeft: windowWidth * 11,
-        marginTop: windowHeight * 15,
-        height: windowHeight * 30
-
-    },
-    detailIcon: {
-        width: windowWidth * 30,
-        height: windowHeight * 30,
-    },
-    detailText: {
-        color: 'white',
-        fontSize: 12,
-        marginLeft: windowWidth * 2,
-        marginTop: windowHeight * 6,
-    },
-    detailValue: {
-        fontSize: 24,
-        color: 'white',
-        textAlign: 'right',
-        marginRight: windowWidth * 11,
-        marginTop: windowHeight * 10,
     },
 })

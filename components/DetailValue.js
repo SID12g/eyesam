@@ -32,7 +32,7 @@ export default function DeatilValue() {
       };
       fetchData();
       
-    }, []);
+    }, [data]);
     
     console.log(data)
     

@@ -53,7 +53,7 @@ export default function DeatilValue() {
       </View><View style={styles.detailRowWrap}>
         <DetailComponent icon={bright} title='밝기' value={data[0].bright} />
         <DetailComponent icon={dist} title='거리' value={data[0].dist + 'cm'} />
-        <DetailComponent icon={sound} title='소리' value={data[0].sound + 'db'} />
+        <DetailComponent icon={sound} title='소리' value={data[0].sound === 1 ? '감지O' : '감지X'} />
       </View>
     </View>
   )
